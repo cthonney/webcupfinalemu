@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_28_084531) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_28_112209) do
   create_table "disasters", force: :cascade do |t|
-    t.string "type"
+    t.string "disaster_type"
     t.float "latitude"
     t.float "longitude"
-    t.string "magnitude"
+    t.float "magnitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "fetched_id"
   end
 
   create_table "reviews", force: :cascade do |t|

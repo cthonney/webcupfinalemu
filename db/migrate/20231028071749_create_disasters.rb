@@ -4,7 +4,7 @@ class CreateDisasters < ActiveRecord::Migration[7.0]
       t.string :type
       t.float :latitude
       t.float :longitude
-      t.string :magnitude
+      t.float :magnitude
 
       t.timestamps
     end
