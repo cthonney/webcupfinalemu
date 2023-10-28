@@ -1,6 +1,25 @@
+DISASTERS_KEYS = {
+  "Volcanic eruption": "volcano.png",
+  "Earthquakes": "earthquake.png",
+  "Hurricane": "hurricane.png",
+  "Cyclone": "cyclone.png",
+  "Typhoon": "typhoon.png",
+  "Tsunami": "tsunami.png",
+  "Floods": "flood.png",
+  "Megafire": "fire.png"
+}
+
 class DisastersController < ApplicationController
   def index
     @disasters = Disaster.all
+    @markers = @disasters.geocoded.map do |disaster|
+      {
+        lat: disaster.latitude,
+        lng: disaster.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {disaster: disaster}),
+        marker_html: render_to_string(partial: "marker", locals: { disaster: disaster, keys: DISASTERS_KEYS })
+      }
+    end
   end
 
   def show

@@ -121,6 +121,7 @@ GEM
     ffi (1.16.3)
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
+    geocoder (1.8.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -294,6 +295,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   font-awesome-sass (~> 6.1)
+  geocoder
   importmap-rails
   jbuilder
   puma (~> 5.0)
