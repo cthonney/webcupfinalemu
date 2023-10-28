@@ -114,10 +114,15 @@ GEM
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.12.0)
+    et-orbi (1.2.7)
+      tzinfo
     execjs (2.9.1)
     ffi (1.16.3)
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
+    fugit (1.9.0)
+      et-orbi (~> 1, >= 1.2.7)
+      raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -165,6 +170,7 @@ GEM
     public_suffix (5.0.3)
     puma (5.6.7)
       nio4r (~> 2.0)
+    raabro (1.4.0)
     racc (1.7.1)
     rack (2.2.8)
     rack-test (2.1.0)
@@ -225,6 +231,10 @@ GEM
       connection_pool (>= 2.2.5, < 3)
       rack (~> 2.0)
       redis (>= 4.5.0, < 5)
+    sidekiq-cron (1.10.1)
+      fugit (~> 1.8)
+      globalid (>= 1.0.1)
+      sidekiq (>= 6)
     sidekiq-failures (1.0.4)
       sidekiq (>= 4.0.0)
     sprockets (4.2.1)
@@ -285,6 +295,7 @@ DEPENDENCIES
   sassc-rails
   selenium-webdriver
   sidekiq (< 7)
+  sidekiq-cron
   sidekiq-failures (~> 1.0)
   simple_form!
   sprockets-rails

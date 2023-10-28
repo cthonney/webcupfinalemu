@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :reviews
 
   require "sidekiq/web"
+  require 'sidekiq/cron/web'
   authenticate :user, ->(user) { user.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
