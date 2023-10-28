@@ -18,6 +18,9 @@ puts "creating an admin user"
 User.create!(
   email: 'admin@webcup.com',
   name: 'admin',
-  password: 'Webcup2023',  # Replace with the desired password
+  surname: 'webcup',
+  password: 'Webcup2023',  # Replace with the desired password,
+  phone_number: '011 23 57 64',
+  country: "Mauritius",
   admin: true
 )
