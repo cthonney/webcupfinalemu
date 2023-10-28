@@ -15,6 +15,8 @@ module WecuptestRails704
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.time_zone = 'Indian/Antananarivo'
+
 
     # Configuration for the application, engines, and railties goes here.
     #
