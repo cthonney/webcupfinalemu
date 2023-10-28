@@ -24,5 +24,12 @@ class DisastersController < ApplicationController
 
   def show
     @disaster = Disaster.find(params[:id])
+    @marker =
+      {
+        lat: @disaster.latitude,
+        lng: @disaster.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {disaster: @disaster}),
+        marker_html: render_to_string(partial: "marker", locals: { disaster: @disaster, keys: DISASTERS_KEYS })
+      }
   end
 end
