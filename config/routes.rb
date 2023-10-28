@@ -10,6 +10,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :disasters
   resources :reviews
-
-
+  resources :contacts, only: [:create]
 end
