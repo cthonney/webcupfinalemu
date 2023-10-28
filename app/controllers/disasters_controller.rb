@@ -1,3 +1,14 @@
+DISASTERS_KEYS = {
+  "Volcanic eruption": "éruption volcanique",
+  "Earthquakes": "tremblements de terre",
+  "Hurricane": "Ouragan",
+  "Cyclone": "Cyclone",
+  "Typhoon": "Typhon",
+  "Tsunami": "Tsunami",
+  "Floods": "Inondations",
+  "Megafire": "Mégafeu"
+}
+
 class DisastersController < ApplicationController
   def index
     @disasters = Disaster.all
