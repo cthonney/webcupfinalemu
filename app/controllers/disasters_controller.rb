@@ -24,6 +24,7 @@ class DisastersController < ApplicationController
 
   def show
     @disaster = Disaster.find(params[:id])
+    @past_disasters = Disaster.where("created_at < ?", Time.now - 4.hour ).near([@disaster.latitude, @disaster.longitude], 1000)
     @marker =
       {
         lat: @disaster.latitude,

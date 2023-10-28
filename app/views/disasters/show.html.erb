@@ -1,5 +1,91 @@
 <% if user_signed_in? %>
-  <h2>User is signed in</h2>
+  <div data-controller="geolocation"
+  data-geolocation-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+  >
+    <h2>
+      Hi <%= current_user.name.capitalize %> <%= current_user.surname.capitalize %> <span data-geolocation-target="location"></span>
+    </h2>
+  </div>
+  <div class="map-container">
+    <div style="width: 100%; height: 600px;"
+    data-controller="map-single"
+    data-map-single-marker-value="<%= @marker.to_json %>"
+    data-map-single-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+    <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %>
+  </div>
+
+  <div class="goc-container">
+    <div class="box">
+      <h4 class="headline">GOVERNMENT & OFFICIALS DIRECTIVES</h4>
+      <div class="messages">
+        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
+        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
+        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
+        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
+        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
+      </div>
+    </div>
+    <div class="coutdown">
+      <h3>Time left before <%= @disaster.disaster_type  %></h3>
+      <div
+        id="countdown"
+        data-controller="flipdown"
+        data-flipdown-target="countdown"
+        data-flipdown-timer-value=<%= @disaster.created_at.to_i + 4*3600 - Time.now.to_i %>
+      >
+        <div class="time hour"></div>
+        <div class="time minute"></div>
+        <div class="time second"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="events-prevention">
+    <div class="events past-events">
+      <h4>Past Events</h4>
+      <div id="past-events">
+
+        <% @past_disasters.each do |past_disaster| %>
+          <div class="past-disaster">
+            <%= past_disaster.disaster_type  %>
+            <%= time_ago_in_words(( past_disaster.created_at + 4.hour))  %>
+            <%= link_to "View", disaster_path(past_disaster), class: "btn" %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+    <div class="events prevention">
+      <h4>Prevention Section</h4>
+      <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, soluta impedit quos dolorum voluptatibus laboriosam rerum obcaecati odio, blanditiis officiis aliquid, et deserunt. Voluptas, nihil dolorem velit voluptates commodi officiis.</p>
+      </div>
+      <%= link_to "Prevention resources", resources_path, class: "btn main-cta-color" %>
+    </div>
+  </div>
+
+  <div class="goc-container">
+    <div class="box">
+      <h4 class="headline">ACTIVE NON-GOVERNMENTAL ORGANIZATIONS</h4>
+      <div class="messages">
+        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
+        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
+        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
+        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
+        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
+      </div>
+    </div>
+    <div class="geosafe">
+      <h3>Geolocalisation Safety check</h3>
+      <div>
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+  <%= link_to "Prevention resources", resources_path, class: "btn main-cta-color" %>
+
   <% if current_user.admin || current_user.ngo %>
     <h3>user is admin or ngo</h3>
   <% end %>
@@ -18,38 +104,5 @@
   <h2>User is no signed in</h2>
 <% end %>
 
-<p>Disaster detail</p>
-<p>
-  <%= @disaster.disaster_type  %>
-</p>
-<p>
-  <%= @disaster.latitude %>
-</p>
-<p>
-  <%= @disaster.longitude %>
-</p>
-<p>
-  <%= @disaster.magnitude %>
-</p>
 
-<p>
-  <%= @disaster.created_at.to_i + 4*3600 %>
-</p>
-
-
-<div
-  id="countdown"
-  data-controller="flipdown"
-  data-flipdown-target="countdown"
-  data-flipdown-timer-value=<%= @disaster.created_at.to_i + 4*3600 - Time.now.to_i %>
->
-  <div class="time hour"></div>
-  <div class="time minute"></div>
-  <div class="time second"></div>
-</div>
-
-<div style="width: 100%; height: 600px;"
-  data-controller="map-single"
-  data-map-single-marker-value="<%= @marker.to_json %>"
-  data-map-single-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+<%= console %>
