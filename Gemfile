@@ -59,6 +59,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 gem 'recaptcha'
 gem "dotenv-rails"
 # gem 'childprocess', '~> 0.5.9'
+gem "rails_admin", "3.0"
 
 
 group :development, :test do
@@ -83,3 +84,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem "sassc-rails"
