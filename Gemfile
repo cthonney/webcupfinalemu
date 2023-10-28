@@ -58,6 +58,7 @@ gem "simple_form", github: "heartcombo/simple_form"
 # gem "sidekiq-cron"
 gem 'recaptcha'
 gem "dotenv-rails"
+gem 'childprocess', '~> 0.5.9'
 
 
 group :development, :test do
