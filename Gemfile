@@ -58,6 +58,7 @@ gem "sidekiq-failures", "~> 1.0"
 gem "sidekiq-cron"
 gem 'recaptcha'
 gem "dotenv-rails"
+gem 'childprocess', '~> 0.5.9'
 
 
 group :development, :test do
