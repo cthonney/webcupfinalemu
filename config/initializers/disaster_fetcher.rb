@@ -1,9 +1,10 @@
 require "json"
 require "open-uri"
 
+# Mapping des types de catastrophes en français et en anglais
 DISASTERS_KEYS = {
   "éruption volcanique" => "Volcanic eruption",
-  "tremblements de terre" => "Earthquake",
+  "tremblements de terre" => "Earthquakes",
   "Ouragan" => "Hurricane",
   "Cyclone" => "Cyclone",
   "Typhon" => "Typhoon",
@@ -12,10 +13,9 @@ DISASTERS_KEYS = {
   "Mégafeu" => "Megafire"
 }
 
-class DisasterJob < ApplicationJob
-  queue_as :default
-
-  def perform
+class DisasterJob
+  # Méthode pour exécuter la tâche
+  def self.perform
     begin
       fetch_and_process_disasters
     rescue StandardError => e
@@ -25,7 +25,8 @@ class DisasterJob < ApplicationJob
 
   private
 
-  def fetch_and_process_disasters
+  # Méthode pour récupérer et traiter les données de catastrophes
+  def self.fetch_and_process_disasters
     url = "https://www.webcup.fr/24hAPI/disaster.php"
     serialized_value = URI.parse(url).open.read
     disasters = JSON.parse(serialized_value)
@@ -33,26 +34,18 @@ class DisasterJob < ApplicationJob
     process_disasters(disasters)
   end
 
-  def process_disasters(disasters)
-    # Your code to process the disasters data goes here
-    # For example, you can save it to your database or perform other operations.
-    # puts disasters
+  # Méthode pour traiter les données de catastrophes
+  def self.process_disasters(disasters)
     disasters.each do |disaster|
-      puts "The diaster value: #{disaster}"
-      # check if this disaster is already present in the database
-      # if Disaster.find_by_fetched_id(disaster["id"])
-      #   puts 'the disaster is new'
-
-      # else
-      #   puts 'disaster is already saved'
-      # end
-
+      # Recherche d'une catastrophe existante dans la base de données
       existing_disaster = Disaster.find_by(fetched_id: disaster["id"])
 
       if existing_disaster
-        puts "Disaster with ID #{disaster["id"]} is already saved"
+        puts "Disaster with ID #{disaster['id']} is already saved"
       else
-        puts "Create a new disaster"
+        puts "Creating a new disaster"
+
+        # Création d'une nouvelle catastrophe
         new_disaster = Disaster.new(
           fetched_id: disaster["id"],
           disaster_type: DISASTERS_KEYS[disaster["type_disaster"]],
@@ -62,13 +55,19 @@ class DisasterJob < ApplicationJob
         )
 
         if new_disaster.save
-          puts "New disaster with ID #{disaster["id"]} has been saved"
+          puts "New disaster with ID #{disaster['id']} has been saved"
         else
-          puts "Failed to save new disaster with ID #{disaster["id"]}"
+          puts "Failed to save new disaster with ID #{disaster['id']}"
         end
       end
     end
   end
 end
 
-Sidekiq::Cron::Job.create(name: 'DisasterAPI - every 5min', cron: '*/5 * * * *', class: 'DisasterJob')
+# Créer un thread pour exécuter le code tous les 300 secondes (5 minutes)
+Thread.new do
+  loop do
+    DisasterJob.perform
+    sleep 300  # Modification à 300 secondes (5 minutes)
+  end
+end

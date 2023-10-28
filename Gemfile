@@ -53,12 +53,12 @@ gem "devise"
 gem "autoprefixer-rails"
 gem "font-awesome-sass", "~> 6.1"
 gem "simple_form", github: "heartcombo/simple_form"
-gem "sidekiq", "< 7"
-gem "sidekiq-failures", "~> 1.0"
-gem "sidekiq-cron"
+# gem "sidekiq", "< 7"
+# gem "sidekiq-failures", "~> 1.0"
+# gem "sidekiq-cron"
 gem 'recaptcha'
 gem "dotenv-rails"
-gem 'childprocess', '~> 0.5.9'
+# gem 'childprocess', '~> 0.5.9'
 
 
 group :development, :test do
