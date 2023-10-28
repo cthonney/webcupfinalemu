@@ -1,0 +1,19 @@
+
+
+<% if disaster.disaster_type == "Volcanic eruption" %>
+  <%= image_tag "volcano.png", height: 30, width: 30, alt: "Logo" %>
+<% elsif disaster.disaster_type == "Earthquakes" %>
+  <%= image_tag "earthquake.png", height: 30, width: 30, alt: "Logo" %>
+<% elsif disaster.disaster_type == "Hurricane" %>
+  <%= image_tag "hurricane.png", height: 30, width: 30, alt: "Logo" %>
+<% elsif disaster.disaster_type == "Cyclone" %>
+  <%= image_tag "cyclone.png", height: 30, width: 30, alt: "Logo" %>
+<% elsif disaster.disaster_type == "Typhoon" %>
+  <%= image_tag "typhoon.png", height: 30, width: 30, alt: "Logo" %>
+<% elsif disaster.disaster_type == "Tsunami" %>
+  <%= image_tag "tsunami.png", height: 30, width: 30, alt: "Logo" %>
+<% elsif disaster.disaster_type == "Floods" %>
+  <%= image_tag "flood.png", height: 30, width: 30, alt: "Logo" %>
+<% elsif disaster.disaster_type == "Megafire" %>
+  <%= image_tag "fire.png", height: 30, width: 30, alt: "Logo" %>
+<% end %>

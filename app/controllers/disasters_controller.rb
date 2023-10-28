@@ -1,12 +1,12 @@
 DISASTERS_KEYS = {
-  "Volcanic eruption": "éruption volcanique",
-  "Earthquakes": "tremblements de terre",
-  "Hurricane": "Ouragan",
-  "Cyclone": "Cyclone",
-  "Typhoon": "Typhon",
-  "Tsunami": "Tsunami",
-  "Floods": "Inondations",
-  "Megafire": "Mégafeu"
+  "Volcanic eruption": "volcano.png",
+  "Earthquakes": "earthquake.png",
+  "Hurricane": "hurricane.png",
+  "Cyclone": "cyclone.png",
+  "Typhoon": "typhoon.png",
+  "Tsunami": "tsunami.png",
+  "Floods": "flood.png",
+  "Megafire": "fire.png"
 }
 
 class DisastersController < ApplicationController
@@ -16,7 +16,8 @@ class DisastersController < ApplicationController
       {
         lat: disaster.latitude,
         lng: disaster.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {disaster: disaster})
+        info_window_html: render_to_string(partial: "info_window", locals: {disaster: disaster}),
+        marker_html: render_to_string(partial: "marker", locals: { disaster: disaster, keys: DISASTERS_KEYS })
       }
     end
   end
