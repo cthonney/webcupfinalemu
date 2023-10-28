@@ -8,7 +8,6 @@ export default class extends Controller {
   };
 
   connect() {
-    console.log("Connected to countdown controller");
 
     this.secondsUntilEnd = this.timerValue;
 
@@ -17,6 +16,20 @@ export default class extends Controller {
 
     this.countdown = setInterval(this.countdown.bind(this), 950);
   }
+
+  addLeadingZero(number) {
+    // Convert the number to a string
+    let numberString = number.toString();
+
+    // Check if it's a single digit
+    if (numberString.length === 1) {
+      // Add a leading zero
+      numberString = "0" + numberString;
+    }
+
+    return numberString;
+  }
+
 
   countdown() {
     const now = new Date();
@@ -33,18 +46,18 @@ export default class extends Controller {
     const secondsPerMinute = 60;
 
     const days = Math.floor(secondsRemaining / secondsPerDay);
-    const hours = Math.floor(
+    let hours = Math.floor(
       (secondsRemaining % secondsPerDay) / secondsPerHour
     );
-    const minutes = Math.floor(
+    let minutes = Math.floor(
       (secondsRemaining % secondsPerHour) / secondsPerMinute
     );
-    const seconds = Math.floor(secondsRemaining % secondsPerMinute);
+    let seconds = Math.floor(secondsRemaining % secondsPerMinute);
 
     this.countdownTarget.innerHTML = `
-      <div class="time hour">${hours}</div>
-      <div class="time minute">${minutes}</div>
-      <div class="time second">${seconds}</div>
+      <div class="time hour">${this.addLeadingZero(hours)}</div>
+      <div class="time minute">${this.addLeadingZero(minutes)}</div>
+      <div class="time second">${this.addLeadingZero(seconds)}</div>
     `;
   }
 }
