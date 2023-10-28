@@ -78,13 +78,6 @@
         <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %>
     </section>
 
-        <% if @show_checkbox_recaptcha %>
-            <%= recaptcha_tags %>
-          <% else %>
-            <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
-        <% end %>
-      </div>rails
-
     <%= render "shared/reviews" %>
 
     <section class="home-contact">
@@ -92,4 +85,10 @@
         <p>Your feedback and questions are like sunshine on a rainy day - they help us grow and improve. Don't hesitate to reach out. We're here to listen, assist, and collaborate. Let's make the world a safer place together.</p>
         <%= link_to "Let's Connect", contact_path, class: "btn main-cta-color" %>
     </section>
+
+    <% if @show_checkbox_recaptcha %>
+        <%= recaptcha_tags %>
+        <% else %>
+        <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
+    <% end %>
 </main>
