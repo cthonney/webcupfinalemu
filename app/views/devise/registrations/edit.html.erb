@@ -24,6 +24,11 @@
   </div>
 
   <div class="form-actions">
+    <% if @show_checkbox_recaptcha %>
+        <%= recaptcha_tags %>
+      <% else %>
+        <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
+    <% end %>
     <%= f.button :submit, "Update" %>
   </div>
 <% end %>

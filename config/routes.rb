@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {}
   root to: "pages#home"
   get "about", to: "pages#about"
   get "contact", to: "pages#contact"
