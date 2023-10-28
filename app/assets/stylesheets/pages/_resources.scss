@@ -1,0 +1,124 @@
+.resources {
+    .hero-res {
+        padding: 10% 0;
+        .hero-res-content {
+            .content-left {
+                width: 69%;
+
+                h1 {
+                    font-size: 3.5rem;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 900;
+                    line-height: 1.1;
+                    margin-bottom: 3%;
+                  
+                    @media only screen and (max-width: 768px) {
+                      margin-bottom: 2.5rem;
+                    }
+                  
+                    @media only screen and (max-width: 540px) {
+                      font-size: 2.5rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .game {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10% 0;
+
+        .game-icon {
+            height: 450px;
+            width: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 5px solid $black;
+            border-radius: 50%;
+
+            --clr: #2467ff;
+            --outline: 2px solid var(--clr);
+            color: var(--clr);
+            outline: var(--outline);
+            border: var(--outline);
+            outline-offset: -20px;
+            transition: outline-offset 200ms ease-in-out;
+
+            &:hover, &:focus {
+                outline: var(--outline);
+                outline-offset: 20px;
+            }
+
+            
+
+            i {
+                font-size: 11rem;
+            }
+        }
+        
+
+        .game-content {
+            width: 45%;
+
+            h2 {
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 1rem;
+            }
+
+            h3 {
+                font-size: 2.5rem;
+                font-weight: 900;
+                margin: 3% 0;
+            }
+
+            p {
+                margin: 6% 0;
+            }
+        }
+    }
+
+    .emer-com {
+        padding: 10% 0;
+
+        h2 {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .emer-com-card-container {
+            display: flex;
+            justify-content: space-between;
+
+            .emer-com-card {
+                background-color: $primaryColor;
+                color: $white;
+                padding: 20px;
+                border-radius: 11px;
+                width: 47%;
+
+                .emer-com-links {
+                    li {
+                        list-style-type: none;
+                        margin: 2% 0;
+
+                        a {
+                            text-decoration: none;
+                            color: $white;
+                            transition: all 200ms ease;
+
+                            &:hover {
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
