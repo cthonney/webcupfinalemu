@@ -32,6 +32,21 @@
   <%= @disaster.magnitude %>
 </p>
 
+<p>
+  <%= @disaster.created_at.to_i + 4*3600 %>
+</p>
+
+
+<div
+  id="countdown"
+  data-controller="flipdown"
+  data-flipdown-target="countdown"
+  data-flipdown-timer-value=<%= @disaster.created_at.to_i + 4*3600 - Time.now.to_i %>
+>
+  <div class="time hour"></div>
+  <div class="time minute"></div>
+  <div class="time second"></div>
+</div>
 
 <div style="width: 100%; height: 600px;"
   data-controller="map-single"
