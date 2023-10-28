@@ -1,5 +1,6 @@
 RailsAdmin.config do |config|
   config.asset_source = :sprockets
+  config.main_app_name = ["SafeHaven", "BackOffice"]
 
   ### Popular gems integration
 
