@@ -1,2 +1,16 @@
 // Import page-specific CSS files here.
 @import "home";
+
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome";
+
+// Your CSS partials;
+
+@import "config/mixins";
