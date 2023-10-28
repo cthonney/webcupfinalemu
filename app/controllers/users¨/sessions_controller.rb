@@ -9,9 +9,18 @@ class Users¨::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+    success = verify_recaptcha(action: 'login', minimum_score: 0.5, secret_key: ENV['RECAPTCHA_SECRET_KEY_V3'])
+    checkbox_success = verify_recaptcha unless success
+    if success || checkbox_success
+      super
+    else
+      if !success
+        @show_checkbox_recaptcha = true
+      end
+      render 'new'
+    end
+  end
 
   # DELETE /resource/sign_out
   # def destroy
