@@ -1,0 +1,176 @@
+.main-header-style {
+    color: $primaryColor;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.main-header-style-w {
+    color: $white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.secondary-header-style {
+    color: $primaryColor;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.secondary-header-style-w {
+    color: $white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.secondary-header-style-wh3 {
+    color: $white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.subtitle-style {
+    color: $primaryColor;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.subtitle-style-w {
+    color: $white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.main-cta-color {
+    color: $white;
+    background-color: $primaryColor;
+    font-size: 1.25rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $white;
+        transform: scale(1.1);
+    }
+}
+
+.main-cta-color-onW {
+    color: $white;
+    background-color: $primaryColor;
+    font-size: 1.25rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $primaryColor;
+        transform: scale(1.1);
+        border: 2px solid $primaryColor;
+    }
+}
+
+.main-cta-color-onW-log {
+    color: $white;
+    background-color: $primaryColor;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $primaryColor;
+        transform: scale(1.1);
+        border: 2px solid $primaryColor;
+    }
+}
+
+.main-cta-color-BonW {
+    color: $white;
+    background-color: $primaryColor1;
+    font-size: 1.25rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $primaryColor1;
+        transform: scale(1.1);
+        border: 2px solid $primaryColor1;
+    }
+}
+
+.main-cta-color-BonWup {
+    color: $white;
+    background-color: $primaryColor1;
+    border: 1px solid $primaryColor1;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $primaryColor1;
+        transform: scale(1.1);
+        border: 1px solid $primaryColor1;
+    }
+}
+
+.main-cta-w {
+    color: $primaryColor;
+    background-color: $white;
+    font-size: 1.25rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $white;
+        transform: scale(1.1);
+    }
+}
+
+
+.secondary-cta {
+    color: $white;
+    border: 2px solid $white;
+    font-size: 1.25rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    @media only screen and (max-width: 540px) {
+        margin-left: 0 !important;
+    }
+
+    &:hover {
+        color: $primaryColor;
+        background-color: $white;
+    }
+}
+
+.secondary-cta-sign {
+    color: $white;
+    border: 1px solid $white;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.secondary-cta-w {
+    color: $primaryColor;
+    background-color: $white;
+    border: 2px solid $primaryColor;
+    font-size: 1.25rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        color: $white;
+        background-color: $primaryColor;
+    }
+}
