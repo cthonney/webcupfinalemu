@@ -7,6 +7,8 @@ class User < ApplicationRecord
          validates :surname, :name, :phone_number, :country, presence: true
          has_one_attached :avatar
          after_initialize :set_default_values
+         has_one_attached :avatar
+
 
   private
 
