@@ -1,7 +1,7 @@
 <%
 =begin%>
  <h1>Predicting Disasters, Saving Lives</h1>
- 
+
 <%
 =end%>
 <%# <div data-controller="tsparticles" id="particles-js"></div> %>
@@ -78,6 +78,12 @@
         <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %>
     </section>
 
+        <% if @show_checkbox_recaptcha %>
+            <%= recaptcha_tags %>
+          <% else %>
+            <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
+        <% end %>
+      </div>rails
+
     <%= render "shared/reviews" %>
 </main>
-
