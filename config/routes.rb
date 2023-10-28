@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :disasters
   resources :reviews
+
+  require "sidekiq/web"
+  require 'sidekiq/cron/web'
+  authenticate :user, ->(user) { user.admin? } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
