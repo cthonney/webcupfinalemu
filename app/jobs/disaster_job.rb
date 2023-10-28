@@ -1,19 +1,21 @@
+# app/jobs/disaster_job.rb
+
 require "json"
 require "open-uri"
 
-# Mapping des types de catastrophes en français et en anglais
-DISASTERS_KEYS = {
-  "éruption volcanique" => "Volcanic eruption",
-  "tremblements de terre" => "Earthquakes",
-  "Ouragan" => "Hurricane",
-  "Cyclone" => "Cyclone",
-  "Typhon" => "Typhoon",
-  "Tsunami" => "Tsunami",
-  "Inondations" => "Floods",
-  "Mégafeu" => "Megafire"
-}
-
 class DisasterJob
+  # Mapping des types de catastrophes en français et en anglais
+  DISASTERS_KEYS = {
+    "éruption volcanique" => "Volcanic eruption",
+    "tremblements de terre" => "Earthquakes",
+    "Ouragan" => "Hurricane",
+    "Cyclone" => "Cyclone",
+    "Typhon" => "Typhoon",
+    "Tsunami" => "Tsunami",
+    "Inondations" => "Floods",
+    "Mégafeu" => "Megafire"
+  }
+
   # Méthode pour exécuter la tâche
   def self.perform
     begin
@@ -48,7 +50,7 @@ class DisasterJob
         # Création d'une nouvelle catastrophe
         new_disaster = Disaster.new(
           fetched_id: disaster["id"],
-          disaster_type: DISASTERS_KEYS[disaster["type_disaster"]],
+          disaster_type: DISASTERS_KEYS[disaster["type_disaster"].strip],
           latitude: disaster["latitude"].to_f,
           longitude: disaster["longitude"].to_f,
           magnitude: disaster["magnitude"].to_f
@@ -61,13 +63,5 @@ class DisasterJob
         end
       end
     end
-  end
-end
-
-# Créer un thread pour exécuter le code tous les 300 secondes (5 minutes)
-Thread.new do
-  loop do
-    DisasterJob.perform
-    sleep 300  # Modification à 300 secondes (5 minutes)
   end
 end
