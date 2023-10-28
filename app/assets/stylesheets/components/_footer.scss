@@ -1,0 +1,23 @@
+footer {
+    position: static;
+    height: 50px;
+    color: $black;
+
+    a, i {
+        text-decoration: none;
+        color: $black;
+    }
+  }
+  
+.foot-bot {
+@media only screen and (max-width: 990px) {
+    flex-direction: column;
+
+}
+}
+
+.foot-link-item {
+@media only screen and (max-width: 990px) {
+    margin-bottom: 1rem;
+}
+}

@@ -1,1 +1,175 @@
 // Specific CSS for your home-page
+main {
+
+    .hero {
+        width: 100%;
+        margin: 10% 0;
+
+        @media only screen and (max-width: 1200px) {
+            margin-bottom: 3.5rem;
+        }
+        
+        .hero-left-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @media only screen and (max-width: 1200px) {
+                flex-direction: column-reverse;
+            }
+
+            .content-left {
+                width: 55%;
+
+                h1 {
+                    font-size: 3.5rem;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 900;
+                    line-height: 1.1;
+                    margin-bottom: 3%;
+                  
+                    @media only screen and (max-width: 768px) {
+                      margin-bottom: 2.5rem;
+                    }
+                  
+                    @media only screen and (max-width: 540px) {
+                      font-size: 2.5rem;
+                    }
+                }
+            }
+
+            .floating-logo {
+                transform: translateY(-5%);
+                animation: floater 2.5s infinite;
+                transition: ease 2.5s;
+                width: 35%;
+                height: auto;
+                object-fit: cover;
+            }
+
+            @keyframes floater {
+                0%{transform: translateY(-5%);transition: ease 1s;}
+                50%{transform: translateY(5%);transition: ease 1s;}
+            }
+        }
+
+        
+    }
+
+    .insti {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20% 0;
+
+        .ioi-logo {
+            width: 45%;
+        }
+
+        .insti-content {
+            width: 45%;
+
+            h2 {
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 1rem;
+            }
+
+            h3 {
+                font-size: 2.5rem;
+                font-weight: 900;
+                margin: 3% 0;
+            }
+
+            p {
+                margin: 6% 0;
+            }
+        }
+    }
+
+    .sahav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10% 0;
+
+        .sh-logo {
+            width: 45%;
+        }
+
+        .sahav-content {
+            width: 45%;
+
+            h2 {
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 1rem;
+            }
+
+            h3 {
+                font-size: 2.5rem;
+                font-weight: 900;
+                margin: 3% 0;
+            }
+
+            p {
+                margin: 6% 0;
+            }
+        }
+    }
+
+    .stats {
+        text-align: center;
+        margin: 10% 0;
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 2rem;
+        }
+
+        .stats-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            .stat {
+                background-color: $primaryColor;
+                color: $white;
+                width: 23.8%;
+                min-height: 150px;
+                padding: 20px;
+                border-radius: 11px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .num {
+                    font-size: 2.125rem;
+                    font-weight: 700;
+                }
+
+                p {
+                    font-size: 1.125rem;
+                    font-weight: 400;
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .home-resources {
+        margin: 10% 0;
+        
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 2% 0;
+        }
+    }
+}
