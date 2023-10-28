@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_28_095817) do
     t.string "disaster_type"
     t.float "latitude"
     t.float "longitude"
-    t.string "magnitude"
+    t.float "magnitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "fetched_id"

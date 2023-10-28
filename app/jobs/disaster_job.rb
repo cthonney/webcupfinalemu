@@ -3,7 +3,7 @@ require "open-uri"
 
 DISASTERS_KEYS = {
   "éruption volcanique" => "Volcanic eruption",
-  "tremblements de terre" => "Earthquakes",
+  "tremblements de terre" => "Earthquake",
   "Ouragan" => "Hurricane",
   "Cyclone" => "Cyclone",
   "Typhon" => "Typhoon",
