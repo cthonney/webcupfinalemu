@@ -1,0 +1,2 @@
+class DisastersController < ApplicationController
+end
