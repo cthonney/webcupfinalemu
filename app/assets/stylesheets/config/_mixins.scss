@@ -56,8 +56,9 @@
     transition: all 0.3s ease;
 
     &:hover {
-        color: $white;
+        color: $primaryColor;
         transform: scale(1.1);
+        border: 2px solid $primaryColor;
     }
 }
 

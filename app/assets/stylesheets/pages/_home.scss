@@ -3,14 +3,13 @@ main {
 
     .hero {
         width: 100%;
-        margin: 5% 0;
+        margin: 10% 0;
 
         @media only screen and (max-width: 1200px) {
             margin-bottom: 3.5rem;
         }
         
         .hero-left-content {
-            // color: #FFFFFF;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -21,7 +20,7 @@ main {
 
             .content-left {
                 width: 55%;
-                
+
                 h1 {
                     font-size: 3.5rem;
                     font-family: 'Roboto', sans-serif;
@@ -55,5 +54,30 @@ main {
         }
 
         
+    }
+
+    .insti {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .ioi-logo {
+            width: 45%;
+        }
+
+        .insti-content {
+            width: 45%;
+
+            h2 {
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 1rem;
+            }
+
+            h3 {
+                font-size: 2.5rem;
+                font-weight: 900;
+            }
+        }
     }
 }
