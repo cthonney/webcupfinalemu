@@ -1,0 +1,27 @@
+<h1>The Continent page</h1>
+
+<%# <div data-controller="tsparticles" id="particles-js"></div> %>
+
+
+<% if user_signed_in? %>
+  <h2>User is signed in</h2>
+
+
+
+  <% if current_user.admin || current_user.ngo %>
+    <h3>user is admin or ngo</h3>
+  <% end %>
+
+  <% if current_user.admin || current_user.gov %>
+    <h3>user is admin or gov</h3>
+
+  <% end %>
+
+  <% if current_user.admin %>
+    <h3>user is admin</h3>
+
+  <% end %>
+
+<% else %>
+  <h2>User is no signed in</h2>
+<% end %>

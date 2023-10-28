@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   end
 
   def resources
+  end
 
+  def continent
   end
 end
