@@ -52,7 +52,8 @@
     color: $white;
     background-color: $primaryColor;
     font-size: 1.25rem;
-    border-radius: 4px;
+    border-radius: 30px;
+    padding: 10px 25px;
     transition: all 0.3s ease;
 
     &:hover {
@@ -66,7 +67,8 @@
     color: $white;
     background-color: $primaryColor;
     font-size: 1.25rem;
-    border-radius: 4px;
+    border-radius: 30px;
+    padding: 10px 25px;
     transition: all 0.3s ease;
 
     &:hover {
@@ -80,7 +82,8 @@
     color: $white;
     background-color: $primaryColor;
     font-size: 1rem;
-    border-radius: 4px;
+    border-radius: 30px;
+    padding: 10px 25px;
     transition: all 0.3s ease;
 
     &:hover {
@@ -94,7 +97,8 @@
     color: $white;
     background-color: $primaryColor;
     font-size: 1.25rem;
-    border-radius: 4px;
+    border-radius: 30px;
+    padding: 10px 25px;
     transition: all 0.3s ease;
 
     &:hover {
@@ -109,7 +113,8 @@
     background-color: $primaryColor;
     border: 1px solid $primaryColor;
     font-size: 1rem;
-    border-radius: 4px;
+    border-radius: 30px;
+    padding: 10px 25px;
     transition: all 0.3s ease;
 
     &:hover {
@@ -123,7 +128,8 @@
     color: $primaryColor;
     background-color: $white;
     font-size: 1.25rem;
-    border-radius: 4px;
+    border-radius: 30px;
+    padding: 10px 25px;
     transition: all 0.3s ease;
 
     &:hover {
@@ -137,7 +143,8 @@
     color: $white;
     border: 2px solid $white;
     font-size: 1.25rem;
-    border-radius: 4px;
+    border-radius: 30px;
+    padding: 10px 25px;
     transition: all 0.3s ease;
 
     @media only screen and (max-width: 540px) {
@@ -154,7 +161,8 @@
     color: $white;
     border: 1px solid $white;
     font-size: 1rem;
-    border-radius: 4px;
+    border-radius: 30px;
+    padding: 10px 25px;
     transition: all 0.3s ease;
 
     &:hover {
@@ -167,7 +175,8 @@
     background-color: $white;
     border: 2px solid $primaryColor;
     font-size: 1.25rem;
-    border-radius: 4px;
+    border-radius: 30px;
+    padding: 10px 25px;
     transition: all 0.3s ease;
 
     &:hover {
