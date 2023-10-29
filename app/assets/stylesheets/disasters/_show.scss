@@ -2,7 +2,8 @@
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 32px;
-  margin-top: 32px;
+  margin: 15% 0;
+
   .headline {
     margin-left: 8px;
   }
@@ -14,9 +15,10 @@
     gap: 16px;
 
     .message {
-      background-color: antiquewhite;
-      padding: 12px;
-      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: $white;
+      padding: 12px 15px;
+      border-radius: 11px;
       margin-inline: 8px;
     }
   }
@@ -25,13 +27,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 11px;
     padding: 12px;
     gap: 32px;
-    background-color: rgb(187, 178, 167);
+    background-color: $secondaryColor;
     text-align: center;
+    color: $white;
   }
   .geosafe {
-    background-color: rgb(199, 193, 185);
+    background-color: $secondaryColor;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -51,7 +55,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: rgb(229, 175, 103);
+        border: 2px solid $secondaryColor;
         height: 80px;
         width: auto;
         padding-inline: 24px;
@@ -68,7 +72,7 @@
   height: 500px;
 
   .events {
-    background-color: rgb(166, 158, 148);
+    background-color: $secondaryColor;
     border-radius: 16px;
     width: auto;
     padding-inline: 12px;

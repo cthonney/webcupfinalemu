@@ -16,7 +16,11 @@
     data-map-single-marker-value="<%= @marker.to_json %>"
     data-map-single-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-    <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %>
+    <%
+=begin%>
+ <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %> 
+<%
+=end%>
   </div>
 
   <div class="goc-container">
