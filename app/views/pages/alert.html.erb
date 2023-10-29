@@ -1,0 +1,19 @@
+  <h1 class="alert-title">Sending Emergency Alerts by the Administrator</h1>
+  <p class="alert-instruction">Click on the event to send the alert to population</p>
+
+<% if current_user.admin? %>
+  <div class="alert-container" data-controller="alert">
+    <% ["Volcanic Eruption", "Earthquake", "Hurricane", "Cyclone", "Typhoon", "Tsunami", "Flood", "Wildfire"].each do |alert_type| %>
+      <button class="alert-button" data-action="click->alert#sendAlert" data-alert-type="<%= alert_type %>"><%= alert_type %></button>
+    <% end %>
+  </div>
+  <div id="custom-alert" class="custom-alert">
+    <div class="custom-alert-content">
+      <span class="custom-alert-close" onclick="closeAlert()">&times;</span>
+      <p id="custom-alert-message"></p>
+      <button onclick="closeAlert()">Fermer</button>
+    </div>
+  </div>
+<% else %>
+  <p>You do not have the permissions to send alerts.</p>
+<% end %>

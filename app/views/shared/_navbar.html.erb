@@ -37,7 +37,9 @@
 
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <% if current_user.admin %>
+                <%= link_to "Send Alert", "/alert", class: "dropdown-item" %>
+              <% end %>
               <%# add link to edit profile %>
               <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
