@@ -213,8 +213,8 @@
                 justify-content: space-between;
     
                 .stat {
-                    background-color: $primaryColor;
-                    color: $white;
+                    background-color: $white;
+                    color: $primaryColor;
                     width: 23.8%;
                     min-height: 150px;
                     padding: 20px;
@@ -223,6 +223,7 @@
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
+                    box-shadow: 0 0 15px rgba(0,0,0,0.0001);
     
                     .num {
                         font-size: 2.125rem;
@@ -233,6 +234,7 @@
                         font-size: 1.125rem;
                         font-weight: 400;
                         margin: 0;
+                        color: $black;
                     }
                 }
             }
