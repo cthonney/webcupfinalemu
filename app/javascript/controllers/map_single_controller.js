@@ -26,6 +26,19 @@ export default class extends Controller {
 
 
     this.#addMarkerToMap();
+
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        this.handleGeoLocationSuccess.bind(this),
+        this.handleGeoLocationError.bind(this)
+      );
+    } else {
+    }
+
+
+
+
+
     this.#fitMapToMarker();
   }
 
@@ -47,5 +60,31 @@ export default class extends Controller {
     const bounds = new mapboxgl.LngLatBounds()
     bounds.extend([this.markerValue.lng, this.markerValue.lat]);
     this.map.fitBounds(bounds, { padding: 70, maxZoom: 6, duration: 0 })
+  }
+
+
+
+    handleGeoLocationSuccess(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    this.map.flyTo({ center: [longitude, latitude], zoom: 2, speed: 0.4 });
+     new mapboxgl.Marker()
+       .setLngLat([longitude, latitude])
+       .addTo(this.map);
+
+      return [longitude, latitude];
+  }
+
+  handleGeoLocationError(error) {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        break;
+      case error.POSITION_UNAVAILABLE:
+        break;
+      case error.TIMEOUT:
+        break;
+      default:
+    }
   }
 }

@@ -4,7 +4,8 @@
   justify-content: center;
   align-items: center;
   gap: 24px;
-  background-color: rgb(171, 231, 143);
+  background-color: rgb(232, 81, 11);
+  color: whitesmoke;
 
   h3 {
     margin: 0;
@@ -25,6 +26,7 @@
         width: 40ch;
         text-overflow: ellipsis;
         overflow-x: hidden;
+        color: whitesmoke;
       }
 
       /* Starting position */

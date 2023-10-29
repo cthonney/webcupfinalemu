@@ -9,7 +9,6 @@ export default class extends Controller {
   };
 
   connect() {
-    console.log("connected to the controller", this.locationTarget);
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
         this.handleGeoLocationSuccess.bind(this),
@@ -17,7 +16,6 @@ export default class extends Controller {
       );
 
     } else {
-      console.error("Geolocation is not available in this browser.");
     }
   }
 
@@ -26,10 +24,6 @@ export default class extends Controller {
     const longitude = position.coords.longitude;
 
     // You can now use the latitude and longitude as needed
-    console.log("Latitude: " + latitude);
-    console.log("Longitude: " + longitude);
-
-
 
     const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?access_token=${this.apiKeyValue}`;
 
@@ -42,13 +36,11 @@ export default class extends Controller {
       })
       .then((data) => {
         // Handle the data here, e.g., display it on the page
-        console.log();
         this.locationTarget.innerHTML = `
           , you're in ${data?.features[1].place_name}
         `;
       })
       .catch((error) => {
-        console.error("Fetch error: ", error);
       });
 
 
@@ -64,16 +56,12 @@ export default class extends Controller {
   handleGeoLocationError(error) {
     switch (error.code) {
       case error.PERMISSION_DENIED:
-        console.error("User denied the request for geolocation.");
         break;
       case error.POSITION_UNAVAILABLE:
-        console.error("Location information is unavailable.");
         break;
       case error.TIMEOUT:
-        console.error("The request to get user location timed out.");
         break;
       default:
-        console.error("An unknown error occurred.");
     }
   }
 }
