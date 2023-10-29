@@ -1,0 +1,50 @@
+.about-main {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  .full-width-image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    &.banner {
+      height: 400px;
+
+      @media only screen and (max-width: 600px) {
+          height: 200px;
+      }
+    }
+
+    &.illus {
+      height: 600px;
+
+            @media only screen and (max-width: 600px) {
+          height: 200px;
+
+          &.mobile-hide {
+            display: none;
+          }
+      }
+    }
+  }
+
+  .about {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 24px;
+
+      @media only screen and (max-width: 600px) {
+          flex-direction: column;
+      }
+  }
+
+  .insti {
+    display: flex;
+    gap: 24px;
+  }
+
+  .about-contact {
+  }
+}
