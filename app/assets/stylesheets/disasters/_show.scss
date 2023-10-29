@@ -97,3 +97,25 @@
     }
   }
 }
+
+.back-btn-container {
+  border: 2px solid $primaryColor;
+  margin: 1.5rem 0;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 29px;
+
+  i {
+    color: $primaryColor;
+  }
+  .back-btn {
+    margin-left: 5px;
+    color: $primaryColor;
+    text-decoration: none;
+    font-weight: 700;
+  }
+}
+
+.geoloc-head {
+  margin: 3% 0;
+}

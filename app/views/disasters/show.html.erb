@@ -1,10 +1,12 @@
-<%= link_to "Go Back", :back %>
+<div class="back-btn-container">
+  <i class="fa-solid fa-arrow-left"></i> <%= link_to "Back", :back, class: "back-btn" %>
+</div>
 
 <% if user_signed_in? %>
-  <div data-controller="geolocation"
+  <div data-controller="geolocation" class="geoloc-head"
   data-geolocation-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
   >
-    <h2>
+    <h2 class="secondary-header-style disaster-header">
       Hi <%= current_user.name.capitalize %> <%= current_user.surname.capitalize %> <span data-geolocation-target="location"></span>
     </h2>
   </div>
