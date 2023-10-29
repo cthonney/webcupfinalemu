@@ -25,9 +25,6 @@ export default class extends Controller {
 
     // You can now use the latitude and longitude as needed
 
-
-
-
     const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${longitude},${latitude}.json?access_token=${this.apiKeyValue}`;
 
     fetch(url)
