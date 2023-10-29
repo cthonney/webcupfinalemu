@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "contact", to: "contacts#new"
   get "resources", to: "pages#resources"
   get "continent", to: "pages#continent"
+  get "terms", to: "pages#terms"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
