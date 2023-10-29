@@ -24,3 +24,6 @@ User.create!(
   country: "Mauritius",
   admin: true
 )
+
+sms_message = " SAFEHAVEN ALERT: A (#{[:type_disaster]}), named (#{[:name]}) is approaching near #{[:location]} in 4 hours. Please take precautions, check your SAFEHAVEN account for more information."
+whatsapp_message = "🚨 SAFEHAVEN ALERT: A (#{[:type_disaster]}), named (#{[:name]}) is approaching near #{[:location]} in 4 hours. Please take precautions, check your SAFEHAVEN account for more information."
