@@ -16,6 +16,12 @@
           <li class="nav-item active">
             <%= link_to "Resources", resources_path, class: "nav-link" %>
           </li>
+          <li class="nav-item active">
+            <%= link_to "About", about_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "Contact", contact_path, class: "nav-link" %>
+          </li>
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
