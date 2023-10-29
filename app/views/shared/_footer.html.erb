@@ -8,7 +8,7 @@
         <!-- Grid column -->
         <div class="foot-link-item col-md-2 col-sm-12">
           <h6 class="text-uppercase font-weight-bold">
-            <a href="#">About Us</a>
+            <%= link_to "About", about_path, class: "nav-link" %>
           </h6>
         </div>
         <!-- Grid column -->
@@ -24,7 +24,7 @@
         <!-- Grid column -->
         <div class="foot-link-item col-md-2 col-sm-12">
           <h6 class="text-uppercase font-weight-bold">
-            <a href="#">Resources</a>
+            <%= link_to "Resources", resources_path, class: "nav-link" %>
           </h6>
         </div>
         <!-- Grid column -->
@@ -32,7 +32,7 @@
         <!-- Grid column -->
         <div class="foot-link-item col-md-2 col-sm-12">
           <h6 class="text-uppercase font-weight-bold">
-            <%= link_to "News", "/blog" %>
+            <%= link_to "Register", root_path, class: "nav-link" %>
           </h6>
         </div>
         <!-- Grid column -->
@@ -40,7 +40,7 @@
         <!-- Grid column -->
         <div class="foot-link-item col-md-2 col-sm-12">
           <h6 class="text-uppercase font-weight-bold">
-            <%= link_to "Contact", "/contact" %>
+            <%= link_to "Contact", contact_path, class: "nav-link" %>
           </h6>
         </div>
         <!-- Grid column -->
@@ -77,8 +77,8 @@
     <!-- Copyright -->
     <div class="foot-bot text-center d-flex justify-content-between p-3">
       <p>Copyright &copy; 2023</p>
-      <%= link_to "Terms & Conditions", "/tac" %>
-      <%= link_to "Privacy Policy", "/policies" %>
+      <%= link_to "Terms & Conditions", terms_path, class: "nav-link" %>
+      <%= link_to "Privacy Policy", terms_path, class: "nav-link" %>
       <h6>Made with <i class="fas fa-heart fa-beat"></i> by the Crazy Chicken - Mauritius 🇲🇺</h6>
     </div>
     <!-- Copyright -->
