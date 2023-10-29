@@ -5,23 +5,23 @@ export default class extends Controller {
     tsParticles.load("particles-js", {
       "particles": {
         "number": {
-          "value": 6,
+          "value": 76,
           "density": {
             "enable": true,
-            "value_area": 800
+            "value_area": 470
           }
         },
         "color": {
-          "value": "#1b1e34"
+          "value": "#2467ff"
         },
         "shape": {
-          "type": "polygon",
+          "type": "circle",
           "stroke": {
             "width": 0,
             "color": "#000"
           },
           "polygon": {
-            "nb_sides": 6
+            "nb_sides": 5
           },
           "image": {
             "src": "img/github.svg",
@@ -40,17 +40,17 @@ export default class extends Controller {
           }
         },
         "size": {
-          "value": 160,
+          "value": 1,
           "random": false,
           "anim": {
             "enable": true,
-            "speed": 10,
-            "size_min": 40,
+            "speed": 15,
+            "size_min": 3,
             "sync": false
           }
         },
         "line_linked": {
-          "enable": false,
+          "enable": true,
           "distance": 200,
           "color": "#ffffff",
           "opacity": 1,

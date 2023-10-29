@@ -119,6 +119,58 @@
             .sh-logo {
                 width: 45%;
             }
+
+            .scanner-container {
+                width: 35%;
+            }
+
+            .outer-circle {
+                width: 240px;
+                height: 240px;
+                border-radius: 50%;
+                box-shadow: 0 0 8px 0 #aaa;
+                position: relative;
+            }
+            
+            .scanner {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            
+                background: conic-gradient(#2467ff, #D6E2ff);
+            
+                animation: scan 4s infinite linear;
+            }
+            
+            .outer-circle:before,
+            .outer-circle:after {
+                content: "";
+                width: 240px;
+                height: 240px;
+                border-radius: 50%;
+                position: absolute;
+                border: 1px solid #eee;
+                animation: ripple 2s infinite linear;
+            }
+            
+            .outer-circle:after {
+                animation-delay: 1s;
+            }
+            
+            @keyframes scan {
+                to {
+                    transform: rotate(1turn);
+                }
+            }
+            
+            @keyframes ripple {
+                to {
+                    transform: scale(2.5);
+                }
+            }
     
             .sahav-content {
                 width: 45%;
