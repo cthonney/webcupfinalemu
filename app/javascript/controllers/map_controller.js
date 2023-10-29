@@ -27,6 +27,14 @@ export default class extends Controller {
     });
 
     this.#addMarkersToMap();
+
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        this.handleGeoLocationSuccess.bind(this),
+        this.handleGeoLocationError.bind(this)
+      );
+    } else {
+    }
   }
 
   #addMarkersToMap() {
@@ -42,5 +50,27 @@ export default class extends Controller {
         .setPopup(popup)
         .addTo(this.map);
     });
+  }
+
+  handleGeoLocationSuccess(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    this.map.flyTo({ center: [longitude, latitude], zoom: 2 });
+     new mapboxgl.Marker()
+       .setLngLat([longitude, latitude])
+       .addTo(this.map);
+  }
+
+  handleGeoLocationError(error) {
+    switch (error.code) {
+      case error.PERMISSION_DENIED:
+        break;
+      case error.POSITION_UNAVAILABLE:
+        break;
+      case error.TIMEOUT:
+        break;
+      default:
+    }
   }
 }
