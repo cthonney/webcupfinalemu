@@ -1,4 +1,4 @@
-# Nom du Projet
+# SafeHaven (Équipe Maurice) - Finale Webcup 2023
 Plateforme pour cartographier et informer sur des catastrophes naturelles.
 
 ## Table des Matières
