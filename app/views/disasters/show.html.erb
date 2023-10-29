@@ -130,7 +130,7 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Safety Check</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <%= simple_form_for @review, url: reviews_path do |f| %>
+      <%= simple_form_for [@disaster, @review] do |f| %>
         <div class="modal-body">
           <div class='mt-4'>
               <%= f.input :full_name, label: 'Full name' %>
