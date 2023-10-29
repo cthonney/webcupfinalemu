@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {}
   root to: "pages#home"
   get "about", to: "pages#about"
-  get "contact", to: "pages#contact"
+  get "contact", to: "contacts#new"
   get "resources", to: "pages#resources"
   get "continent", to: "pages#continent"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
