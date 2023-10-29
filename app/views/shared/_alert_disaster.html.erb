@@ -1,0 +1,20 @@
+<div class="disaster-alert">
+  <h3>
+    ALERT
+  </h3>
+  <div class="alert-box">
+    <div class="scoll-components">
+      <% @disaster_alerts.each do |disaster| %>
+        <%= link_to disaster_path(disaster), class:"disaster-link" do %>
+          <div
+            class="text-nowrap disaster-text"
+          >
+            <%= disaster.disaster_type %>
+            <%= disaster.address %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
