@@ -17,9 +17,10 @@
     <%= render "shared/navbar" %>
     <%= render "shared/flashes" %>
     <%= render "shared/alert_disaster" %>
-  <div class="container">
-    <%= yield %>
-  </div>
-  <%= render "shared/footer" %>
+
+    <div class="<%= (params[:controller] = "pages" && params[:action] == "home") ? "": "container" %>">
+      <%= yield %>
+    </div>
+    <%= render "shared/footer" %>
   </body>
 </html>
