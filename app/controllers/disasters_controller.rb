@@ -10,6 +10,8 @@ DISASTERS_KEYS = {
 }
 
 class DisastersController < ApplicationController
+skip_before_action :authenticate_user!, only: [ :index, :show ]
+
   def index
     @disasters = Disaster.all
     @markers = @disasters.geocoded.map do |disaster|
