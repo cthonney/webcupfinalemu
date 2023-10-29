@@ -1,2 +1,5 @@
-<h2><%= disaster.disaster_type %></h2>
-<%= link_to 'View', disaster_path(disaster) %>
+<h2 class="subtitle-style popin-text"><%= disaster.disaster_type %></h2>
+<p>Region: <%= disaster.address %></p>
+<p class="m-0">Coordinates</p>
+<p>long: <%= disaster.longitude %> / lat: <%= disaster.latitude %></p>
+<%= link_to 'View', disaster_path(disaster), class:"btn secondary-cta-w small" %>

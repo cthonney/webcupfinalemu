@@ -14,7 +14,17 @@ skip_before_action :authenticate_user!, only: [ :index, :show ]
 
   def index
     @disasters = Disaster.all
-    @markers = @disasters.geocoded.map do |disaster|
+    @recent_disasters = Disaster.where("created_at > ?", Time.now - 4.hour )
+    @markers = @recent_disasters.geocoded.map do |disaster|
+      {
+        lat: disaster.latitude,
+        lng: disaster.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {disaster: disaster}),
+        marker_html: render_to_string(partial: "marker", locals: { disaster: disaster, keys: DISASTERS_KEYS })
+      }
+    end
+
+    @all_markers = @disasters.geocoded.map do |disaster|
       {
         lat: disaster.latitude,
         lng: disaster.longitude,

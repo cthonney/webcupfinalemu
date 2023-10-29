@@ -179,6 +179,10 @@
     padding: 10px 25px;
     transition: all 0.3s ease;
 
+    &.small {
+      padding: 0px 25px;
+    }
+
     &:hover {
         color: $white;
         background-color: $primaryColor;
