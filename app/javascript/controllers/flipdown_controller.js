@@ -55,9 +55,18 @@ export default class extends Controller {
     let seconds = Math.floor(secondsRemaining % secondsPerMinute);
 
     this.countdownTarget.innerHTML = `
-      <div class="time hour">${this.addLeadingZero(hours)}</div>
-      <div class="time minute">${this.addLeadingZero(minutes)}</div>
-      <div class="time second">${this.addLeadingZero(seconds)}</div>
+      <div class="time hour">
+        ${this.addLeadingZero(hours)}
+        <span class="type">Hours</span>
+      </div>
+      <div class="time minute">
+        ${this.addLeadingZero(minutes)}
+        <span class="type">Minutes</span>
+      </div>
+      <div class="time second">
+        ${this.addLeadingZero(seconds)}
+        <span class="type">Seconds</span>
+      </div>
     `;
   }
 }

@@ -13,11 +13,14 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-  <%= render "shared/flashes" %>
-  <div class="<%= (params[:controller] = "pages" && params[:action] == "home") ? "": "container" %>">
-    <%= yield %>
-  </div>
-  <%= render "shared/footer" %>
+  <body>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
+    <%= render "shared/alert_disaster" %>
+
+    <div class="<%= (params[:controller] = "pages" && params[:action] == "home") ? "": "container" %>">
+      <%= yield %>
+    </div>
+    <%= render "shared/footer" %>
   </body>
 </html>
