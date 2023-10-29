@@ -17,5 +17,21 @@
     font-family: 'Roboto', sans-serif;
     color: $black;
     font-weight: 400;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      display: block;
+      transition: all 0.3s ease;
+      bottom: 25%;
+    }
+
+    &:hover::after {
+      width: 4%;
+      height: 2px;
+      background-color: $primaryColor;
+    }
   }
 }
