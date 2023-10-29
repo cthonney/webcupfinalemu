@@ -25,5 +25,15 @@ User.create!(
   admin: true
 )
 
+User.create!(
+  email: 'user@webcup.com',
+  name: 'Alan',
+  surname: '- Président Assoc Webcup',
+  password: 'Webcup2023',  # Replace with the desired password,
+  phone_number: '021 23 47 64',
+  country: "La Reunion",
+  admin: false
+)
+
 sms_message = " SAFEHAVEN ALERT: A (#{[:type_disaster]}), named (#{[:name]}) is approaching near #{[:location]} in 4 hours. Please take precautions, check your SAFEHAVEN account for more information."
 whatsapp_message = "🚨 SAFEHAVEN ALERT: A (#{[:type_disaster]}), named (#{[:name]}) is approaching near #{[:location]} in 4 hours. Please take precautions, check your SAFEHAVEN account for more information."
