@@ -76,10 +76,14 @@
         }
     
         .insti {
+            background-color: $black;
+            color: $white;
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin: 20% 0;
+            padding: 10% 2%;
+            border-radius: 11px;
     
             .ioi-logo {
                 width: 45%;
