@@ -1,0 +1,55 @@
+.about-main {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  .content-left {
+    h2 {
+      margin: 2rem 0;
+    }
+  }
+
+  .full-width-image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    &.banner {
+      height: 400px;
+
+      @media only screen and (max-width: 600px) {
+          height: 200px;
+      }
+    }
+
+    &.illus {
+      height: 350px;
+
+            @media only screen and (max-width: 600px) {
+          height: 200px;
+
+          &.mobile-hide {
+            display: none;
+          }
+      }
+    }
+  }
+
+  .about {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    padding: 10% 0;
+    gap: 24px;
+
+      @media only screen and (max-width: 600px) {
+          flex-direction: column;
+      }
+  }
+
+  .insti {
+    display: flex;
+    gap: 24px;
+    padding: 10% 0;
+  }
+}
