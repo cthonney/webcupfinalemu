@@ -1,188 +1,266 @@
 // Specific CSS for your home-page
-main {
+.home-container {
+    padding: 0 5%;
+    position: relative;
 
-    .hero {
+    .home-bg {
+        background-image: url("home-bg.svg");
+        mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
+        background-repeat: no-repeat;
+        position: absolute;
+        top: -130px;
+        left: 0;
+        height: 100%;
         width: 100%;
-        margin: 10% 0;
+        z-index: -1;
+        opacity: 0.03;
+    }
 
-        @media only screen and (max-width: 1200px) {
-            margin-bottom: 3.5rem;
-        }
+    main {
         
-        .hero-left-content {
+
+        .hero {
+            
+            width: 100%;
+            margin: 10% 0;
+    
+            @media only screen and (max-width: 1200px) {
+                margin-bottom: 3.5rem;
+            }
+            
+            .hero-left-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+    
+                @media only screen and (max-width: 1200px) {
+                    flex-direction: column-reverse;
+                }
+    
+                .content-left {
+                    width: 55%;
+    
+                    h1 {
+                        font-size: 3.5rem;
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 900;
+                        line-height: 1.1;
+                        margin-bottom: 3%;
+                      
+                        @media only screen and (max-width: 768px) {
+                          margin-bottom: 2.5rem;
+                        }
+                      
+                        @media only screen and (max-width: 540px) {
+                          font-size: 2.5rem;
+                        }
+                    }
+                }
+    
+                .floating-logo {
+                    transform: translateY(-5%);
+                    animation: floater 2.5s infinite;
+                    transition: ease 2.5s;
+                    width: 35%;
+                    height: auto;
+                    object-fit: cover;
+                }
+    
+                @keyframes floater {
+                    0%{transform: translateY(-5%);transition: ease 1s;}
+                    50%{transform: translateY(5%);transition: ease 1s;}
+                }
+            }
+    
+            
+        }
+    
+        .insti {
+            background-color: $black;
+            color: $white;
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            @media only screen and (max-width: 1200px) {
-                flex-direction: column-reverse;
+            margin: 20% 0;
+            padding: 10% 2%;
+            border-radius: 11px;
+    
+            .ioi-logo {
+                width: 45%;
             }
-
-            .content-left {
-                width: 55%;
-
-                h1 {
-                    font-size: 3.5rem;
-                    font-family: 'Roboto', sans-serif;
+    
+            .insti-content {
+                width: 45%;
+    
+                h2 {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    font-size: 1rem;
+                }
+    
+                h3 {
+                    font-size: 2.5rem;
                     font-weight: 900;
-                    line-height: 1.1;
-                    margin-bottom: 3%;
-                  
-                    @media only screen and (max-width: 768px) {
-                      margin-bottom: 2.5rem;
-                    }
-                  
-                    @media only screen and (max-width: 540px) {
-                      font-size: 2.5rem;
-                    }
+                    margin: 3% 0;
+                }
+    
+                p {
+                    margin: 6% 0;
                 }
             }
-
-            .floating-logo {
-                transform: translateY(-5%);
-                animation: floater 2.5s infinite;
-                transition: ease 2.5s;
-                width: 35%;
-                height: auto;
-                object-fit: cover;
-            }
-
-            @keyframes floater {
-                0%{transform: translateY(-5%);transition: ease 1s;}
-                50%{transform: translateY(5%);transition: ease 1s;}
-            }
         }
-
-        
-    }
-
-    .insti {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 20% 0;
-
-        .ioi-logo {
-            width: 45%;
-        }
-
-        .insti-content {
-            width: 45%;
-
-            h2 {
-                text-transform: uppercase;
-                font-weight: 600;
-                font-size: 1rem;
-            }
-
-            h3 {
-                font-size: 2.5rem;
-                font-weight: 900;
-                margin: 3% 0;
-            }
-
-            p {
-                margin: 6% 0;
-            }
-        }
-    }
-
-    .sahav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 10% 0;
-
-        .sh-logo {
-            width: 45%;
-        }
-
-        .sahav-content {
-            width: 45%;
-
-            h2 {
-                text-transform: uppercase;
-                font-weight: 600;
-                font-size: 1rem;
-            }
-
-            h3 {
-                font-size: 2.5rem;
-                font-weight: 900;
-                margin: 3% 0;
-            }
-
-            p {
-                margin: 6% 0;
-            }
-        }
-    }
-
-    .stats {
-        text-align: center;
-        margin: 10% 0;
-
-        h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        p {
-            margin-bottom: 2rem;
-        }
-
-        .stats-container {
-            width: 100%;
+    
+        .sahav {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            margin: 10% 0;
+    
+            .sh-logo {
+                width: 45%;
+            }
 
-            .stat {
-                background-color: $primaryColor;
-                color: $white;
-                width: 23.8%;
-                min-height: 150px;
-                padding: 20px;
-                border-radius: 11px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
+            .scanner-container {
+                width: 35%;
+            }
 
-                .num {
-                    font-size: 2.125rem;
-                    font-weight: 700;
+            .outer-circle {
+                width: 240px;
+                height: 240px;
+                border-radius: 50%;
+                box-shadow: 0 0 8px 0 #aaa;
+                position: relative;
+            }
+            
+            .scanner {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            
+                background: conic-gradient(#2467ff, #D6E2ff);
+            
+                animation: scan 4s infinite linear;
+            }
+            
+            .outer-circle:before,
+            .outer-circle:after {
+                content: "";
+                width: 240px;
+                height: 240px;
+                border-radius: 50%;
+                position: absolute;
+                border: 1px solid #eee;
+                animation: ripple 2s infinite linear;
+            }
+            
+            .outer-circle:after {
+                animation-delay: 1s;
+            }
+            
+            @keyframes scan {
+                to {
+                    transform: rotate(1turn);
                 }
-
+            }
+            
+            @keyframes ripple {
+                to {
+                    transform: scale(2.5);
+                }
+            }
+    
+            .sahav-content {
+                width: 45%;
+    
+                h2 {
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    font-size: 1rem;
+                }
+    
+                h3 {
+                    font-size: 2.5rem;
+                    font-weight: 900;
+                    margin: 3% 0;
+                }
+    
                 p {
-                    font-size: 1.125rem;
-                    font-weight: 400;
-                    margin: 0;
+                    margin: 6% 0;
                 }
             }
         }
-    }
-
-    .home-resources {
-        margin: 10% 0;
-        
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin: 2% 0;
+    
+        .stats {
+            text-align: center;
+            margin: 10% 0;
+    
+            h2 {
+                font-size: 2rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+            }
+    
+            p {
+                margin-bottom: 2rem;
+            }
+    
+            .stats-container {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+    
+                .stat {
+                    background-color: $white;
+                    color: $primaryColor;
+                    width: 23.8%;
+                    min-height: 150px;
+                    padding: 20px;
+                    border-radius: 11px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    box-shadow: 0 0 15px rgba(0,0,0,0.0001);
+    
+                    .num {
+                        font-size: 2.125rem;
+                        font-weight: 700;
+                    }
+    
+                    p {
+                        font-size: 1.125rem;
+                        font-weight: 400;
+                        margin: 0;
+                        color: $black;
+                    }
+                }
+            }
         }
-    }
-
-    .home-contact {
-        margin: 10% 0;
-
-        h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
+    
+        .home-resources {
+            margin: 10% 0;
+            
+            h2 {
+                font-size: 2.5rem;
+                font-weight: 900;
+                margin: 2% 0;
+            }
         }
-
-        p {
-            margin: 3% 0;
+    
+        .home-contact {
+            margin: 10% 0;
+    
+            h2 {
+                font-size: 2.5rem;
+                font-weight: 700;
+            }
+    
+            p {
+                margin: 3% 0;
+            }
         }
     }
 }
