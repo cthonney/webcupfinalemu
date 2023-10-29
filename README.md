@@ -1,5 +1,5 @@
 # SafeHaven (Équipe Maurice) - Finale Webcup 2023
-Plateforme pour cartographier et informer sur des catastrophes naturelles.
+Plateforme pour cartographier et prevenir la population des catastrophes naturelles.
 
 ## Table des Matières
 - [Technologie](#technologie)
