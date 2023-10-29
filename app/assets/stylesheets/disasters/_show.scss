@@ -20,12 +20,43 @@
       margin-inline: 8px;
     }
   }
-  .coutdown {
+  .countdown {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 12px;
+    gap: 32px;
     background-color: rgb(187, 178, 167);
+    text-align: center;
+  }
+  .geosafe {
+    background-color: rgb(199, 193, 185);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    padding-block: 32px;
+
+    .values {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      gap: 12px;
+      width: 100%;
+      padding-inline: 24px;
+
+      .value {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(229, 175, 103);
+        height: 80px;
+        width: auto;
+        padding-inline: 24px;
+      }
+    }
   }
 }
 

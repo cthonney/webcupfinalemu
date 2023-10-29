@@ -1,3 +1,5 @@
+<%= link_to "Go Back", :back %>
+
 <% if user_signed_in? %>
   <div data-controller="geolocation"
   data-geolocation-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
@@ -26,7 +28,7 @@
         <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
       </div>
     </div>
-    <div class="coutdown">
+    <div class="countdown">
       <h3>Time left before <%= @disaster.disaster_type  %></h3>
       <div
         id="countdown"
@@ -40,6 +42,10 @@
       </div>
     </div>
   </div>
+  <% if current_user.admin || current_user.gov %>
+    <%= link_to "SEND MESSAGE", "#", class: "btn main-cta-color" %>
+
+  <% end %>
 
   <div class="events-prevention">
     <div class="events past-events">
@@ -78,31 +84,72 @@
     </div>
     <div class="geosafe">
       <h3>Geolocalisation Safety check</h3>
-      <div>
-        <p></p>
+      <div
+        class="values"
+      >
+        <div
+        class="value"
+        >
+          <span>POPULATION:</span>
+          <span>XXXXXXX</span>
+        </div>
+        <div
+        class="value"
+        >
+          <span>MARKED AS SAFE:</span>
+          <span>XXXXXXX</span>
+        </div>
+        <div
+        class="value"
+        >
+          <span>IN DANGER:</span>
+          <span>XXXXXXX</span>
+        </div>
       </div>
+      <button type="button" class="btn main-cta-color" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        CHECK YOURSELF AS SAFE
+      </button>
+
     </div>
   </div>
-
-  <%= link_to "Prevention resources", resources_path, class: "btn main-cta-color" %>
-
   <% if current_user.admin || current_user.ngo %>
-    <h3>user is admin or ngo</h3>
+    <%= link_to "SEND MESSAGE", "#", class: "btn main-cta-color" %>
   <% end %>
-
-  <% if current_user.admin || current_user.gov %>
-    <h3>user is admin or gov</h3>
-
-  <% end %>
-
-  <% if current_user.admin %>
-    <h3>user is admin</h3>
-
-  <% end %>
-
+  <div class="d-flex justify-content-center mt-3">
+    <%= link_to "Prevention resources", resources_path, class: "btn main-cta-color" %>
+  </div>
 <% else %>
   <h2>User is no signed in</h2>
 <% end %>
 
 
-<%= console %>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Safety Check</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <%= simple_form_for @review, url: reviews_path do |f| %>
+        <div class="modal-body">
+          <div class='mt-4'>
+              <%= f.input :full_name, label: 'Full name' %>
+              <%= f.input :email, label: 'Email' %>
+              <%= f.input :is_safe, label: 'I am safe' %>
+              <%= f.input :comment, label: 'Message', as: :text %>
+              <% if @show_checkbox_recaptcha %>
+                <%= recaptcha_tags %>
+              <% else %>
+                <%= recaptcha_v3(action: 'login', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
+              <% end %>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <%= f.button :submit, 'Send', class: 'btn main-cta-color-BonWup' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
