@@ -11,3 +11,11 @@
   height: 40px;
   width: auto;
 }
+
+#navbar {
+  .nav-link {
+    font-family: 'Roboto', sans-serif;
+    color: $black;
+    font-weight: 400;
+  }
+}
