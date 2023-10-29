@@ -1,0 +1,45 @@
+.disaster-alert {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  background-color: rgb(171, 231, 143);
+
+  h3 {
+    margin: 0;
+  }
+
+  .alert-box {
+    overflow: hidden;
+    width: 80%;
+    .scoll-components {
+      display: flex;
+      gap: 24px;
+
+      .disaster-link {
+        text-decoration: none;
+      }
+
+      .disaster-text {
+        width: 40ch;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+      }
+
+      /* Starting position */
+      transform: translateX(100%);
+      /* Apply animation to this element */
+      animation: scroll-left 30s linear infinite;
+    }
+    /* Move it (define the animation) */
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-220%);
+      }
+    }
+  }
+}

@@ -5,97 +5,90 @@
 <%
 =end%>
 <%# <div data-controller="tsparticles" id="particles-js"></div> %>
-<div class="home-container">
-    <div class="home-bg"></div>
-    <main class="home">
-        <section class="hero">
-            <div class="hero-left-content">
-                <div class="content-left">
-                    <h1>Predicting Disasters, Saving Lives</h1>
-                    <p>Stay one step ahead of nature's fury with our real-time alerts, providing crucial information to keep you and your loved ones safe.</p>
-                    <div class="d-grid gap-2 d-md-block">
-                        <%= link_to "GET ALERTS", new_user_registration_path, class: "btn main-cta-color-onW" %>
-                        <a href="#about" class="btn secondary-cta-w ms-3">MORE INFO</a>
-                    </div>
-                </div>
-                <%= image_tag "sh-final-blue.svg", class: 'floating-logo' %>
-            </div>
-        </section>
-
-        <section class="insti">
-            <%= image_tag "ioi-logo-white.png", class: 'ioi-logo' %>
-            <div class="insti-content">
-                <h2>The indian ocean institute</h2>
-                <h3>The research institute in natural disaster</h3>
-                <p>The Indian Ocean Institute is a prominent research organization focused on comprehensively researching and mitigating a wide range of natural disasters, such as volcanic eruptions, earthquakes, hurricanes, cyclones, typhoons, tsunamis, floods, and wildfires. By collecting and analyzing data, our mission revolves around developing advanced artificial intelligence systems for global disaster prediction. We are dedicated to furnishing early warnings to governments, NGOs, and the public, with the ultimate goal of minimizing casualties and property damage through enhanced preparedness and prevention efforts. </p>
-                <a href="#about" class="btn main-cta-color">MORE INFO</a>
-            </div>
-        </section>
-
-        <section class="sahav">
-            <div class="sahav-content">
-                <h2>Safehaven: Your Ai Disaster Guardian</h2>
-                <h3>Safehaven: Your Four-Hour Shield Against Disaster!</h3>
-                <p>Safehaven, an innovative artificial intelligence (AI) system by the Indian Ocean Institute, offers advanced, region-specific natural disaster predictions, delivering alerts to authorities and communities up to four hours in advance. This groundbreaking technology empowers individuals, governments, and organizations with vital time for preparedness and action, potentially preventing loss of life and minimizing disaster impact. In an ever-changing world, Safehaven serves as a dependable partner in disaster prevention and response, paving the way for a safer future through early warnings and preparedness. </p>
-                <a href="#about" class="btn main-cta-color">GET STARTED</a>
-            </div>
-            <div class="scanner-container">
-                <div class="outer-circle">
-                    <div class="scanner"></div>
+<main class="home">
+    <section class="hero">
+        <div class="hero-left-content">
+            <div class="content-left">
+                <h1>Predicting Disasters, Saving Lives</h1>
+                <p>Stay one step ahead of nature's fury with our real-time alerts, providing crucial information to keep you and your loved ones safe.</p>
+                <div class="d-grid gap-2 d-md-block">
+                    <%= link_to "GET ALERTS", new_user_registration_path, class: "btn main-cta-w" %>
+                    <a href="#about" class="btn secondary-cta ms-3">MORE INFO</a>
                 </div>
             </div>
-        </section>
+            <%= image_tag "sh-final-blue.svg", class: 'floating-logo' %>
+        </div>
+    </section>
 
-        <section class="stats">
-            <h2>Empowering Change through Data</h2>
-            <p>Key Statistics that Define Our Impact</p>
+    <section class="insti">
+        <%= image_tag "ioi-logo-white.png", class: 'ioi-logo' %>
+        <div class="insti-content">
+            <h2>The indian ocean institute</h2>
+            <h3>The research institute in natural disaster</h3>
+            <p>The Indian Ocean Institute is a prominent research organization focused on comprehensively researching and mitigating a wide range of natural disasters, such as volcanic eruptions, earthquakes, hurricanes, cyclones, typhoons, tsunamis, floods, and wildfires. By collecting and analyzing data, our mission revolves around developing advanced artificial intelligence systems for global disaster prediction. We are dedicated to furnishing early warnings to governments, NGOs, and the public, with the ultimate goal of minimizing casualties and property damage through enhanced preparedness and prevention efforts. </p>
+            <a href="#about" class="btn main-cta-color">MORE INFO</a>
+        </div>
+    </section>
 
-            <div class="stats-container">
-                <div class="stat">
-                    <div class="num">
-                        1,000
-                    </div>
-                    <p>Disasters Worldwide</p>
+    <section class="sahav">
+        <div class="sahav-content">
+            <h2>Safehaven: Your Ai Disaster Guardian</h2>
+            <h3>Safehaven: Your Four-Hour Shield Against Disaster!</h3>
+            <p>Safehaven, an innovative artificial intelligence (AI) system by the Indian Ocean Institute, offers advanced, region-specific natural disaster predictions, delivering alerts to authorities and communities up to four hours in advance. This groundbreaking technology empowers individuals, governments, and organizations with vital time for preparedness and action, potentially preventing loss of life and minimizing disaster impact. In an ever-changing world, Safehaven serves as a dependable partner in disaster prevention and response, paving the way for a safer future through early warnings and preparedness. </p>
+            <a href="#about" class="btn main-cta-color">GET STARTED</a>
+        </div>
+        <%= image_tag "sh-final-black.png", class: 'sh-logo' %>
+    </section>
+
+    <section class="stats">
+        <h2>Empowering Change through Data</h2>
+        <p>Key Statistics that Define Our Impact</p>
+
+        <div class="stats-container">
+            <div class="stat">
+                <div class="num">
+                    1000
                 </div>
-                <div class="stat">
-                    <div class="num">
-                    30,704
-                    </div>
-                    <p>Victims Worldwide</p>
-                </div>
-                <div class="stat">
-                    <div class="num">
-                        5,000,000,000
-                    </div>
-                    <p>Billions in Savings</p>
-                </div>
-                <div class="stat">
-                    <div class="num">
-                        20,000
-                    </div>
-                    <p>Lives Saved</p>
-                </div>
+                <p>Disasters Worldwide</p>
             </div>
-        </section>
+            <div class="stat">
+                <div class="num">
+                30704
+                </div>
+                <p>Victims Worldwide</p>
+            </div>
+            <div class="stat">
+                <div class="num">
+                    5000000000
+                </div>
+                <p>Billions in Savings</p>
+            </div>
+            <div class="stat">
+                <div class="num">
+                    20000
+                </div>
+                <p>Lives Saved</p>
+            </div>
+        </div>
+    </section>
 
-        <section class="home-resources">
-            <h2>Explore Helpful Resources</h2>
-            <p>Access essential resources, guides, and links to empower yourself and your community in the face of natural disasters. Stay informed, prepared, and resilient with our carefully curated collection.</p>
-            <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %>
-        </section>
+    <section class="home-resources">
+        <h2>Explore Helpful Resources</h2>
+        <p>Access essential resources, guides, and links to empower yourself and your community in the face of natural disasters. Stay informed, prepared, and resilient with our carefully curated collection.</p>
+        <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %>
+    </section>
 
-        <%= render "shared/reviews" %>
+    <%= render "shared/reviews" %>
 
-        <section class="home-contact">
-            <h2>Get in Touch with Us</h2>
-            <p>Your feedback and questions are like sunshine on a rainy day - they help us grow and improve. Don't hesitate to reach out. We're here to listen, assist, and collaborate. Let's make the world a safer place together.</p>
-            <%= link_to "Let's Connect", contact_path, class: "btn main-cta-color" %>
-        </section>
+    <section class="home-contact">
+        <h2>Get in Touch with Us</h2>
+        <p>Your feedback and questions are like sunshine on a rainy day - they help us grow and improve. Don't hesitate to reach out. We're here to listen, assist, and collaborate. Let's make the world a safer place together.</p>
+        <%= link_to "Let's Connect", contact_path, class: "btn main-cta-color" %>
+    </section>
 
-        <% if @show_checkbox_recaptcha %>
-            <%= recaptcha_tags %>
-            <% else %>
-            <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
-        <% end %>
-    </main>
-</div>
+    <% if @show_checkbox_recaptcha %>
+        <%= recaptcha_tags %>
+        <% else %>
+        <%= recaptcha_v3(action: 'login', class: 'btn main-cta-color', site_key: ENV['RECAPTCHA_SITE_KEY_V3']) %>
+    <% end %>
+</main>
