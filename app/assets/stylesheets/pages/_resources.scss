@@ -153,6 +153,8 @@
         .dis-phases-card-container {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
+
             .dis-phases-card {
                 text-align: center;
                 background-color: $primaryColor;
@@ -160,6 +162,26 @@
                 padding: 20px;
                 border-radius: 11px;
                 width: 32%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 1.5rem;
+
+                .icon {
+                    width: 60px;
+                    height: 60px;
+                    border: 2px solid $white;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                    
+                    i {
+                        font-size: 2rem;
+                        color: $white;
+                    }
+                }
 
                 h4 {
                     font-size: 1.5rem;
