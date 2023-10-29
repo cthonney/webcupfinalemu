@@ -190,4 +190,24 @@
             }
         }
     }
+
+    .edu-prev {
+        padding: 12% 6%;
+        color: $white;
+        border-radius: 11px;
+        background: rgb(36,103,255);
+        background: linear-gradient(157deg, rgba(36,103,255,1) 0%, rgba(112,155,255,1) 65%, rgba(214,226,255,1) 100%);
+
+        h2 {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin: 3% 0;
+        }
+    }
 }
