@@ -179,13 +179,12 @@
     padding: 10px 25px;
     transition: all 0.3s ease;
 
-<<<<<<< HEAD
     @media only screen and (max-width: 540px) {
         margin-left: 0 !important;
-=======
+    }
+    
     &.small {
       padding: 0px 25px;
->>>>>>> 0363d87b7a30463af1bbce843f1947cf3aca10b0
     }
 
     &:hover {
