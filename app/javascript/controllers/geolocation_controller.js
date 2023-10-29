@@ -37,7 +37,7 @@ export default class extends Controller {
       .then((data) => {
         // Handle the data here, e.g., display it on the page
         this.locationTarget.innerHTML = `
-          , you're in ${data?.features[1].place_name}
+          ${data?.features[1].place_name}
         `;
       })
       .catch((error) => {

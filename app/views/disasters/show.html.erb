@@ -18,7 +18,7 @@
     </div>
     <%
 =begin%>
- <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %> 
+ <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %>
 <%
 =end%>
   </div>
@@ -27,15 +27,22 @@
     <div class="box">
       <h4 class="headline">GOVERNMENT & OFFICIALS DIRECTIVES</h4>
       <div class="messages">
-        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
-        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
-        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
-        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
-        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
+        <div class="message">🇲🇬 Madagascar Alert: A natural disaster is imminent. Seek shelter immediately at designated assembly points. If you need help or shelter, meet us at the <b>Assembly Point 📍 MAHAMASINA, ANTANANARIVO</b>.Stay safe and follow local news for updates."</div>
+        <div class="message">🇲🇺 Mauritius Alert: A severe natural disaster is approaching. Head to the designades <b>Assembly Point 📍 TRIBECCA MALL, ROSE-HILL</b>. In case of emergency, dial 890 909. Keep informed through local news.</div>
+        <div class="message">🇷🇪 Reunion Alert: Be prepared for a natural disaster. Stay tuned to local news for the latest updates.</div>
+        <div class="message">🇿🇦 South Africa Alert: Prepare for an incoming natural disaster. Head to assembly point created in Cape Town <b>Assembly Point 📍 LE WAGON, CAPE TOWN</b>. For emergency support, call 7898 0009. Stay informed through local news channels."</div>
+        <div class="message">🇰🇲 Comoros Alert: Be prepared for a natural disaster. Stay tuned to local news for the latest updates.</div>
+        <div class="message">🇾🇹 Mayotte Alert: Be prepared for a natural disaster. Stay tuned to local news for the latest updates.</div>
       </div>
     </div>
     <div class="countdown">
-      <h3>Time left before <%= @disaster.disaster_type  %></h3>
+
+        <div data-controller="geolocation" class="geoloc-head"
+          data-geolocation-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
+        >
+        <p>📍<span data-geolocation-target="location"></span></p>
+        </div>
+        <h3>Time left before: <%= @disaster.disaster_type  %></h3>
       <div
         id="countdown"
         data-controller="flipdown"
@@ -70,9 +77,9 @@
     <div class="events prevention">
       <h4>Prevention Section</h4>
       <div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, soluta impedit quos dolorum voluptatibus laboriosam rerum obcaecati odio, blanditiis officiis aliquid, et deserunt. Voluptas, nihil dolorem velit voluptates commodi officiis.</p>
+        <p>Knowing the early warning signs and the potential risks associated with a particular type of disaster allows people to prepare in advance. This includes creating emergency kits, developing evacuation plans, and strengthening infrastructure to mitigate damage.</p>
       </div>
-      <%= link_to "Prevention resources", resources_path, class: "btn secondary-cta" %>
+      <%= link_to "PREVENTION RESOURCES", resources_path, class: "btn secondary-cta" %>
     </div>
   </div>
 
@@ -80,35 +87,33 @@
     <div class="box">
       <h4 class="headline">ACTIVE NON-GOVERNMENTAL ORGANIZATIONS</h4>
       <div class="messages">
-        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
-        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
-        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
-        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
-        <div class="message">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo impedit suscipit corporis magni unde. Aspernatur, eius. Aut ipsum exercitationem, fugiat tempore quasi, error accusamus quos necessitatibus eos illum dolore modi ullam quibusdam veritatis explicabo sequi tenetur sapiente, rerum molestiae odit repellat nulla id incidunt? Distinctio quidem aut ex repellat beatae.</div>
+        <div class="message">🇲🇬 Global Aid Network: Urgent Earthquake Alert in Madagascar. A devastating earthquake has struck, leaving communities in need of emergency assistance. Your <b>donation at [Donation Link]</b> can provide crucial aid and support to those affected. Please help us make a difference.</div>
+        <div class="message">🇲🇺 H.P.N.M : Flood Crisis in Mauritius. Communities are facing severe flooding. We're on the ground, but we need your support to provide food, clean water, and shelter.</div>
+        <div class="message">🇿🇦 C.P.D: Hurricane Alert in the South Africa. A powerful hurricane is approaching, and we're mobilizing to assist. Hepl us to provide relief, shelter, and vital supplies to the impacted areas.</div>
       </div>
     </div>
     <div class="geosafe">
-      <h3>Geolocalisation Safety check</h3>
+      <h3>Geolocalisation Safety Check:</h3>
       <div
         class="values"
       >
         <div
         class="value"
         >
-          <span>POPULATION:</span>
-          <span>XXXXXXX</span>
+          <span>📍POPULATION:</span>
+          <span>4,325,226</span>
         </div>
         <div
         class="value"
         >
-          <span>MARKED AS SAFE:</span>
-          <span>XXXXXXX</span>
+          <span>✅ MARKED AS SAFE:</span>
+          <span>20,789</span>
         </div>
         <div
         class="value"
         >
-          <span>IN DANGER:</span>
-          <span>XXXXXXX</span>
+          <span>🔴 IN DANGER:</span>
+          <span>4,304,437</span>
         </div>
       </div>
       <button type="button" class="btn secondary-cta" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -122,10 +127,10 @@
   <section class="dis-resources">
       <h2>Some Helpful Resources</h2>
       <p>Access essential resources, guides, and links to empower yourself and your community in the face of natural disasters. Stay informed, prepared, and resilient with our carefully curated collection.</p>
-      <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %>
+      <%= link_to "STAY SAFE", resources_path, class: "btn main-cta-color" %>
   </section>
 <% else %>
-  <h2>User is no signed in</h2>
+  <h2> Please Login To Access Information</h2>
 <% end %>
 
 
