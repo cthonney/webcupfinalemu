@@ -125,4 +125,38 @@
             }
         }
     }
+
+    .dis-phases {
+        padding: 10% 0;
+
+        h2 {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+            width: 65vw;
+            font-weight: 900;
+            margin: 3% 0;
+        }
+        .dis-phases-card-container {
+            display: flex;
+            justify-content: space-between;
+            .dis-phases-card {
+                text-align: center;
+                background-color: $primaryColor;
+                color: $white;
+                padding: 20px;
+                border-radius: 11px;
+                width: 32%;
+
+                h4 {
+                    font-size: 1.5rem;
+                    margin-bottom: 5%;
+                }
+            }
+        }
+    }
 }
