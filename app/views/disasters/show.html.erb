@@ -49,7 +49,6 @@
     </div>
   </div>
   <% if current_user.admin || current_user.gov %>
-    <%= link_to "SEND MESSAGE", "#", class: "btn main-cta-color" %>
 
   <% end %>
 
@@ -73,7 +72,7 @@
       <div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, soluta impedit quos dolorum voluptatibus laboriosam rerum obcaecati odio, blanditiis officiis aliquid, et deserunt. Voluptas, nihil dolorem velit voluptates commodi officiis.</p>
       </div>
-      <%= link_to "Prevention resources", resources_path, class: "btn main-cta-color" %>
+      <%= link_to "Prevention resources", resources_path, class: "btn secondary-cta" %>
     </div>
   </div>
 
@@ -112,14 +111,13 @@
           <span>XXXXXXX</span>
         </div>
       </div>
-      <button type="button" class="btn main-cta-color" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button type="button" class="btn secondary-cta" data-bs-toggle="modal" data-bs-target="#exampleModal">
         CHECK YOURSELF AS SAFE
       </button>
 
     </div>
   </div>
   <% if current_user.admin || current_user.ngo %>
-    <%= link_to "SEND MESSAGE", "#", class: "btn main-cta-color" %>
   <% end %>
   <div class="d-flex justify-content-center mt-3">
     <%= link_to "Prevention resources", resources_path, class: "btn main-cta-color" %>
