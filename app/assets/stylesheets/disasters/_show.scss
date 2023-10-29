@@ -2,7 +2,8 @@
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: 32px;
-  margin-top: 32px;
+  margin: 15% 0;
+
   .headline {
     margin-left: 8px;
   }
@@ -14,9 +15,10 @@
     gap: 16px;
 
     .message {
-      background-color: antiquewhite;
-      padding: 12px;
-      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: $white;
+      padding: 12px 15px;
+      border-radius: 11px;
       margin-inline: 8px;
     }
   }
@@ -25,13 +27,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 11px;
     padding: 12px;
     gap: 32px;
-    background-color: rgb(187, 178, 167);
+    background-color: $secondaryColor;
     text-align: center;
+    color: $white;
   }
   .geosafe {
-    background-color: rgb(199, 193, 185);
+    background-color: $secondaryColor;
+    color: $white;
+    border-radius: 11px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -51,7 +57,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: rgb(229, 175, 103);
+        border: 2px solid $secondaryColor;
         height: 80px;
         width: auto;
         padding-inline: 24px;
@@ -65,14 +71,15 @@
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   margin-top: 32px;
-  height: 500px;
+  height: 350px;
 
   .events {
-    background-color: rgb(166, 158, 148);
-    border-radius: 16px;
+    color: $white;
+    background-color: $secondaryColor;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 11px;
     width: auto;
-    padding-inline: 12px;
-    padding-block: 24px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -95,5 +102,37 @@
         margin-inline: 50px;
       }
     }
+  }
+}
+
+.back-btn-container {
+  border: 2px solid $primaryColor;
+  margin: 1.5rem 0;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 29px;
+
+  i {
+    color: $primaryColor;
+  }
+  .back-btn {
+    margin-left: 5px;
+    color: $primaryColor;
+    text-decoration: none;
+    font-weight: 700;
+  }
+}
+
+.geoloc-head {
+  margin: 3% 0;
+}
+
+.dis-resources {
+  margin: 7% 0;
+  
+  h2 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin: 2% 0;
   }
 }

@@ -1,11 +1,11 @@
 .disaster-alert {
-  height: 50px;
+  height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 24px;
-  background-color: rgb(232, 81, 11);
-  color: whitesmoke;
+  background-color: #ff3b30;
+  color: $white;
 
   h3 {
     margin: 0;

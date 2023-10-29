@@ -8,5 +8,30 @@
 }
 
 .navbar-cc .navbar-brand img {
-  width: 40px;
+  height: 40px;
+  width: auto;
+}
+
+#navbar {
+  .nav-link {
+    font-family: 'Roboto', sans-serif;
+    color: $black;
+    font-weight: 400;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      display: block;
+      transition: all 0.3s ease;
+      bottom: 25%;
+    }
+
+    &:hover::after {
+      width: 4%;
+      height: 2px;
+      background-color: $primaryColor;
+    }
+  }
 }

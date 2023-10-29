@@ -1,10 +1,12 @@
-<%= link_to "Go Back", :back %>
+<div class="back-btn-container">
+  <i class="fa-solid fa-arrow-left"></i> <%= link_to "Back", :back, class: "back-btn" %>
+</div>
 
 <% if user_signed_in? %>
-  <div data-controller="geolocation"
+  <div data-controller="geolocation" class="geoloc-head"
   data-geolocation-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"
   >
-    <h2>
+    <h2 class="secondary-header-style disaster-header">
       Hi <%= current_user.name.capitalize %> <%= current_user.surname.capitalize %> <span data-geolocation-target="location"></span>
     </h2>
   </div>
@@ -14,7 +16,11 @@
     data-map-single-marker-value="<%= @marker.to_json %>"
     data-map-single-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-    <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %>
+    <%
+=begin%>
+ <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %> 
+<%
+=end%>
   </div>
 
   <div class="goc-container">
@@ -43,7 +49,6 @@
     </div>
   </div>
   <% if current_user.admin || current_user.gov %>
-    <%= link_to "SEND MESSAGE", "#", class: "btn main-cta-color" %>
 
   <% end %>
 
@@ -67,7 +72,7 @@
       <div>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, soluta impedit quos dolorum voluptatibus laboriosam rerum obcaecati odio, blanditiis officiis aliquid, et deserunt. Voluptas, nihil dolorem velit voluptates commodi officiis.</p>
       </div>
-      <%= link_to "Prevention resources", resources_path, class: "btn main-cta-color" %>
+      <%= link_to "Prevention resources", resources_path, class: "btn secondary-cta" %>
     </div>
   </div>
 
@@ -106,18 +111,19 @@
           <span>XXXXXXX</span>
         </div>
       </div>
-      <button type="button" class="btn main-cta-color" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <button type="button" class="btn secondary-cta" data-bs-toggle="modal" data-bs-target="#exampleModal">
         CHECK YOURSELF AS SAFE
       </button>
 
     </div>
   </div>
   <% if current_user.admin || current_user.ngo %>
-    <%= link_to "SEND MESSAGE", "#", class: "btn main-cta-color" %>
   <% end %>
-  <div class="d-flex justify-content-center mt-3">
-    <%= link_to "Prevention resources", resources_path, class: "btn main-cta-color" %>
-  </div>
+  <section class="dis-resources">
+      <h2>Some Helpful Resources</h2>
+      <p>Access essential resources, guides, and links to empower yourself and your community in the face of natural disasters. Stay informed, prepared, and resilient with our carefully curated collection.</p>
+      <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %>
+  </section>
 <% else %>
   <h2>User is no signed in</h2>
 <% end %>
