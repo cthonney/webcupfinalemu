@@ -39,6 +39,10 @@
     
                 .content-left {
                     width: 55%;
+
+                    @media only screen and (max-width: 1200px) {
+                        width: 90%;
+                    }
     
                     h1 {
                         font-size: 3.5rem;
@@ -64,6 +68,11 @@
                     width: 35%;
                     height: auto;
                     object-fit: cover;
+
+                    @media only screen and (max-width: 1200px) {
+                        width: 35%;
+                        margin-bottom: 10%;
+                    }
                 }
     
                 @keyframes floater {
@@ -84,13 +93,25 @@
             margin: 20% 0;
             padding: 10% 2%;
             border-radius: 11px;
+
+            @media only screen and (max-width: 1200px) {
+                flex-direction: column;
+            }
     
             .ioi-logo {
                 width: 45%;
+
+                @media only screen and (max-width: 1200px) {
+                width: 90%;
+            }
             }
     
             .insti-content {
                 width: 45%;
+
+                @media only screen and (max-width: 1200px) {
+                width: 90%;
+            }
     
                 h2 {
                     text-transform: uppercase;
@@ -115,6 +136,10 @@
             justify-content: space-between;
             align-items: center;
             margin: 10% 0;
+
+            @media only screen and (max-width: 1200px) {
+                flex-direction: column-reverse;
+            }
     
             .sh-logo {
                 width: 45%;
@@ -122,6 +147,11 @@
 
             .scanner-container {
                 width: 35%;
+
+                @media only screen and (max-width: 1200px) {
+                    width: 90%;
+                    padding: 25% auto;
+                }
             }
 
             .outer-circle {
@@ -174,6 +204,11 @@
     
             .sahav-content {
                 width: 45%;
+
+                @media only screen and (max-width: 1200px) {
+                    width: 90%;
+                    margin: 20% 0;
+                }
     
                 h2 {
                     text-transform: uppercase;
@@ -211,6 +246,14 @@
                 width: 100%;
                 display: flex;
                 justify-content: space-between;
+
+                @media only screen and (max-width: 1200px) {
+                    flex-wrap: wrap;
+                }
+
+                @media only screen and (max-width: 540px) {
+                    flex-direction: column;
+                }
     
                 .stat {
                     background-color: $white;
@@ -224,10 +267,21 @@
                     align-items: center;
                     justify-content: center;
                     box-shadow: 0 0 15px rgba(0,0,0,0.0001);
+
+                    @media only screen and (max-width: 540px) {
+                        width: 90%;
+                        margin-bottom: 1rem;
+                    }
     
                     .num {
                         font-size: 2.125rem;
                         font-weight: 700;
+
+                        @media only screen and (max-width: 1200px) {
+                            font-size: 1.125rem;
+                        }
+
+
                     }
     
                     p {
@@ -235,6 +289,11 @@
                         font-weight: 400;
                         margin: 0;
                         color: $black;
+
+                        @media only screen and (max-width: 1200px) {
+                            font-size: 1rem;
+                        }
+
                     }
                 }
             }
