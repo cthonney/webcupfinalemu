@@ -119,9 +119,11 @@
   </div>
   <% if current_user.admin || current_user.ngo %>
   <% end %>
-  <div class="d-flex justify-content-center mt-3">
-    <%= link_to "Prevention resources", resources_path, class: "btn main-cta-color" %>
-  </div>
+  <section class="dis-resources">
+      <h2>Some Helpful Resources</h2>
+      <p>Access essential resources, guides, and links to empower yourself and your community in the face of natural disasters. Stay informed, prepared, and resilient with our carefully curated collection.</p>
+      <%= link_to "Start Exploring", resources_path, class: "btn main-cta-color" %>
+  </section>
 <% else %>
   <h2>User is no signed in</h2>
 <% end %>
